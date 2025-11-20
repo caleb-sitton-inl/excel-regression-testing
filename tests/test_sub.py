@@ -1,12 +1,12 @@
-"""Tests simple macros in an excel workbook"""
+"""Tests simple subprocess macros in an excel workbook"""
 import os
 
 import xlwings as xw
 
 tests_dir_path = os.path.dirname(__file__)
-test_xl_path = os.path.join(os.path.dirname(tests_dir_path), 'workbooks', 'with_macros.xlsm')
+test_xl_path = os.path.join(os.path.dirname(tests_dir_path), 'workbooks', 'with_sub.xlsm')
 
-def test_macros():
+def test_sub():
   with xw.Book(test_xl_path) as workbook:
     sample_macro = workbook.macro("sample_macro")
     sample_macro()
@@ -23,4 +23,4 @@ def test_macros():
 
 
 if __name__ == "__main__":
-  test_macros()
+  test_sub()
